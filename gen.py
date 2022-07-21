@@ -12,6 +12,9 @@ from keras.utils import np_utils
 with open('data/notes', 'rb') as filepath:
     notes = pickle.load(filepath)
 
+#Update path to the saved hdf5 weights file
+path_to_weights_file = ""
+
 n_vocab = len(set(notes))
 sequence_length = 100
 # get all pitch names
@@ -51,7 +54,7 @@ model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
 
 # Load the weights to each node
-model.load_weights('weights-improvement-13-2.6605-bigger.hdf5')
+model.load_weights(path_to_weights_file)
 
 start = numpy.random.randint(0, len(network_input)-1)
 int_to_note = dict((number, note) for number, note in enumerate(pitchnames))
