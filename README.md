@@ -12,7 +12,7 @@ This project allows you to train a neural network to generate midi music files t
 	* h5py
   
   ## Usage
-  * Place midi files of your choice into the midi_songs directory, which is read from Google Drive
+  * Place midi files of your choice into the midi_songs directory
 
   * Run the train.py file to train the NN
   
